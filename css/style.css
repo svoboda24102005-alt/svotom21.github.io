@@ -95,6 +95,7 @@ header nav ul li a:hover {
   gap: 20px;
   justify-items: center; 
   grid-template-columns: 1fr; 
+  justify-content: center;
 }
 
 .rooms h2 {
@@ -431,18 +432,18 @@ footer a {
   text-decoration: none;
 }  
 
-@media (min-width: 1200px) { 
+@media (min-width: 1200px) {
   .rooms {
     grid-template-columns: repeat(4, 300px); 
-    justify-content: center; 
   }
 }
 
-@media (min-width: 576px) { 
+@media (min-width: 576px) and (max-width: 1199px) {
   .rooms {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    grid-template-columns: repeat(2, 300px); 
   }
 }
+
 
 
 

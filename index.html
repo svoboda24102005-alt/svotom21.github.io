@@ -125,6 +125,7 @@
         <span class="price">5000 Kč / noc</span>
         <button onclick="vybratPokoj('Premium Suite',5000)">Rezervovat</button>
       </div>
+
       <div class="slide">
         <img src="https://www.pytlounhotelprague.cz/files-sbbasic/sr_pytlounhotelprague_cz/_64a0593.jpg" alt="Premium 2">
         <h3>Premium Deluxe</h3>
@@ -132,25 +133,31 @@
         <span class="price">4500 Kč / noc</span>
         <button onclick="vybratPokoj('Premium Deluxe',4500)">Rezervovat</button>
       </div>
+
       <div class="slide">
         <img src="https://www.designatak.cz/getattachment/3b3165e4-84a0-42d4-9223-7dc33ecedbe4/teaser.aspx" alt="Premium 3">
         <h3>Premium Panorama</h3>
         <p>Nejlepší výhled na moře z 10. patra.</p>
-        <span class="price new price">6000 Kč / noc</span>
-        <span class="price new-price">5200 Kč / noc</span> 
-          <div
-    id="countdown"
-    class="text-center mb-3"
-    style="font-size: 1.2rem; font-weight: bold; color: #d50000"
-  >
-    Nabídka platí ještě: načítám...
-  </div>
+        <span class="price old-price">6000 Kč / noc</span>
+        <span class="price new-price">5200 Kč / noc</span>
 
-  <button onclick="vybratPokoj('Premium Panorama',6000)">Rezervovat</button>
-</div>
+        <!-- countdown -->
+        <div id="countdown-premium" class="text-center mb-3"
+             style="font-size: 1.2rem; font-weight: bold; color: #d50000">
+          Nabídka platí ještě: načítám...
+        </div>
+
+  <button onclick="vybratPokoj('Premium Panorama',5200)">Rezervovat</button>
+      </div>
+    </div>
+
+    <button class="carousel-btn prev">&#10094;</button>
+    <button class="carousel-btn next">&#10095;</button>
+  </div>
+</section>
 
 <script>
-  const countdownEl = document.getElementById("countdown");
+  const countdownEl = document.getElementById("countdown-premium");
   const targetDate = new Date("2025-09-19T09:35:00").getTime();
 
   function updateCountdown() {
@@ -163,17 +170,15 @@
     }
 
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor(
-      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-    );
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    countdownEl.textContent = Nabídka platí ještě: ${days}d ${hours}h ${minutes}m ${seconds}s;
+    countdownEl.textContent = Sleva končí za: ${days}d ${hours}h ${minutes}m ${seconds}s;
   }
 
-  updateCountdown(); // první zavolání hned
-  setInterval(updateCountdown, 1000); // každou sekundu
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
 </script>
       </div>
     </div>
@@ -258,6 +263,7 @@
 
 </body>
 </html>
+
 
 
 

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Paradise</title>
+  <link rel="stylesheet" href="style.css">
+  
+  <script src="css/style.css" defer></script>
+</head>
+<body>
+  
+<!-- hamburg + cely menu -->
+<header>
+  <div class="logo">
+    <img src="https://interhotelzlin.cz/wp-content/themes/moskva/images/hotel_zlin.png" alt="Logo">
+    <h1>Hotel Pardise</h1>
+  </div>
+
+  
+  <button class="hamburger" id="hamburger">
+    ☰
+  </button>
+
+  <nav id="navMenu">
+    <ul>
+      <li><a href="#rooms">Pokoje</a></li>
+      <li><a href="#premium">Prémiové</a></li>
+      <li><a href="#reviews">Recenze</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#reservation">Rezervace</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+    </ul>
+  </nav>
+</header>
+<!-- hero prvek -->
+<div class="hero-image">
+    <img src="https://rainbowtours.cz/uploads/image/image/339942/wakacje-i-wczasy-w-hotelu-maritim-hotel-paradise-blue-albena-186459.jpg" alt="Hotel scenic view">
+</div>
+
+
+
+
+<!-- pokoje -->
+<section id="rooms" class="rooms">
+  <h2>Naše pokoje</h2>
+  <div class="room">
+    <img src="https://www.thermal.cz/img/_/rooms/superior-gallery-1.jpg" alt="Pokoj Standard">
+    <h3>Pokoj Standard</h3>
+    <p>Komfortní pokoj pro 2 osoby se snídaní v ceně.</p>
+    <span class="price">1500 Kč / noc</span>
+    <button onclick="vybratPokoj('Pokoj Standard',1500)">Rezervovat</button>
+  </div>
+  <div class="room">
+    <img src="https://www.omniahotel.cz/wp-content/uploads/2023/11/Omnia-Hotel-Relax-Wellness-Superior-rodinny-pokoj-s-balkonem-1.jpg" alt="Luxusní apartmán">
+    <h3>Luxusní Apartmán</h3>
+    <p>Prostorný apartmán s výhledem na moře.</p>
+    <span class="price">3000 Kč / noc</span>
+    <button onclick="vybratPokoj('Luxusní Apartmán',3000)">Rezervovat</button>
+  </div>
+  <div class="room">
+    <img src="https://www.hotelvitality.cz/content_data/custom_post/2/6_pokoj-standard-01.jpg" alt="Rodinný pokoj">
+    <h3>Rodinný pokoj</h3>
+    <p>Ideální pro rodiny, 4 lůžka a vlastní kuchyňka.</p>
+    <span class="price">2000 Kč / noc</span>
+    <button onclick="vybratPokoj('Rodinný pokoj',2000)">Rezervovat</button>
+  </div>
+    <div class="room">
+    <img src="https://www.omniahotel.cz/wp-content/uploads/2025/06/Superior_DVOULUZKO.jpg" alt="Rodinný pokoj">
+    <h3>Pokoj s vyhledem na more</h3>
+    <p>Skvělý výhled na moře se 2 lužkami a přistýlkou.</p>
+    <span class="price">2000 Kč / noc</span>
+    <button onclick="vybratPokoj('Rodinný pokoj',2000)">Rezervovat</button>
+  </div>
+</section>
+
+<!-- carousel s premium pokojema -->
+<section id="premium" class="premium">
+  <h2>Prémiové pokoje</h2>
+  <div class="carousel">
+    <div class="carousel-track">
+      <div class="slide">
+        <img src="https://www.hotel-sanov.cz/data/multipage/editor/editor-8-122-cs_2_big.jpg?gcm_date=1589659658" alt="Premium 1">
+        <h3>Premium Suite</h3>
+        <p>Luxusní apartmán s privátním wellness.</p>
+        <span class="price">5000 Kč / noc</span>
+        <button onclick="vybratPokoj('Premium Suite',5000)">Rezervovat</button>
+      </div>
+      <div class="slide">
+        <img src="https://www.pytlounhotelprague.cz/files-sbbasic/sr_pytlounhotelprague_cz/_64a0593.jpg" alt="Premium 2">
+        <h3>Premium Deluxe</h3>
+        <p>Stylový pokoj v centru s balkónem.</p>
+        <span class="price">4500 Kč / noc</span>
+        <button onclick="vybratPokoj('Premium Deluxe',4500)">Rezervovat</button>
+      </div>
+      <div class="slide">
+        <img src="https://www.designatak.cz/getattachment/3b3165e4-84a0-42d4-9223-7dc33ecedbe4/teaser.aspx" alt="Premium 3">
+        <h3>Premium Panorama</h3>
+        <p>Nejlepší výhled na moře z 10. patra.</p>
+        <span class="price">6000 Kč / noc</span>
+        <button onclick="vybratPokoj('Premium Panorama',6000)">Rezervovat</button>
+      </div>
+    </div>
+    <button class="carousel-btn prev">&#10094;</button>
+    <button class="carousel-btn next">&#10095;</button>
+  </div>
+</section>
+
+
+<section id="reviews" class="reviews">
+  <h2>Co říkají naši hosté</h2>
+  <div class="review">
+    <p>"Úžasný hotel, perfektní personál a krásné prostředí!"</p>
+    <span>- Jana, Praha</span>
+  </div>
+  <div class="review">
+    <p>"Nejlepší dovolená, určitě se vrátíme."</p>
+    <span>- Petr, Brno</span>
+  </div>
+</section>
+
+
+<section id="faq" class="faq">
+  <h2>Časté dotazy</h2>
+  <div class="faq-item">
+    <button class="faq-question">Je v ceně snídaně?</button>
+    <div class="faq-answer">Ano, snídaně formou bufetu je zahrnuta v ceně.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">Má hotel parkoviště?</button>
+    <div class="faq-answer">Ano, hotel nabízí hlídané parkoviště zdarma.</div>
+  </div>
+</section>
+
+<!-- rezervace -->
+<section id="reservation" class="reservation">
+  <h2>Rezervace pokoje</h2>
+  <form id="reservationForm">
+    <input type="text" id="name" name="name" placeholder="Vaše jméno" required>
+    <input type="email" id="email" name="email" placeholder="Email" required>
+    <input type="date" id="date" name="date" required>
+    <input type="number" id="nights" name="nights" placeholder="Počet nocí" min="1" value="1" required>
+    <select id="roomSelect" name="room" required>
+      <option value="">Vyberte pokoj</option>
+      <option value="Pokoj Standard" data-price="1500">Pokoj Standard</option>
+      <option value="Luxusní Apartmán" data-price="3000">Luxusní Apartmán</option>
+      <option value="Rodinný pokoj" data-price="2000">Rodinný pokoj</option>
+      <option value="Premium Suite" data-price="5000">Premium Suite</option>
+      <option value="Premium Deluxe" data-price="4500">Premium Deluxe</option>
+      <option value="Premium Panorama" data-price="6000">Premium Panorama</option>
+    </select>
+    <p id="totalPrice" style="font-weight:bold;">Celková cena: 0 Kč</p>
+    <button type="submit">Odeslat rezervaci</button>
+  </form>
+</section>
+<?php include "php/reservace.php";?>
+
+<section id="contact" class="contact">
+  <h2>Kontakt</h2>
+  <p>Email: info@hotelparadise.cz</p>
+  <p>Tel: +420 123 456 789</p>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18..." width="100%" height="300" style="border:0;" allowfullscreen=""></iframe>
+</section>
+
+<footer>
+  &copy; 2025 Hotel Paradise | Všechna práva vyhrazena |
+  <a href="#rooms">Pokoje</a> |
+  <a href="#reservation">Rezervace</a>
+</footer>
+
+<!--potvrzeni o rezervaci -->
+<div class="modal" id="confirmationModal">
+  <div class="modal-content">
+    <h3>Rezervace potvrzena!</h3>
+    <p id="modalMessage"></p>
+    <button onclick="closeModal()">OK</button>
+  </div>
+</div>
+
+<script src="js/script.js" ></script>
+
+
+</body>
+</html>

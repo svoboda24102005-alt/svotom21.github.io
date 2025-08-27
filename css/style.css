@@ -93,8 +93,8 @@ header nav ul li a:hover {
   padding: 40px;
   display: grid;
   gap: 20px;
-  justify-content: center;  
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  justify-items: center; 
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
 }
 
 .rooms h2 {
@@ -433,9 +433,11 @@ footer a {
 
 @media (min-width: 1200px) { 
   .rooms {
-    grid-template-columns: repeat(4, 300px); / pevná šířka 4 karty vedle sebe */
+    grid-template-columns: repeat(4, 300px); 
+    justify-content: center; 
   }
 }
+
 
 
 

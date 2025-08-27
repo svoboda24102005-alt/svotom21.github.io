@@ -431,9 +431,10 @@ footer a {
   text-decoration: none;
 }  
 
-@media (min-width: 1200px) { /* LG a větší /
+@media (min-width: 1200px) { 
   .rooms {
     grid-template-columns: repeat(4, 300px); 
+    justify-content: center; 
   }
 }
 
@@ -442,6 +443,7 @@ footer a {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
   }
 }
+
 
 
 

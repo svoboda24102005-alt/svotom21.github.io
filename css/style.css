@@ -96,6 +96,8 @@ header nav ul li a:hover {
   gap: 20px;
   justify-items: center;    
   justify-content: center;  
+  max-width: 1200px; 
+  margin: 0 auto; 
 }
 
 .rooms h2 {
@@ -431,6 +433,7 @@ footer a {
   transition: color 0.3s;
   text-decoration: none;
 }  
+
 
 
 

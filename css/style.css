@@ -154,6 +154,25 @@ header nav ul li a:hover {
   background: #219150;
 }
 
+.old-price {
+  text-decoration: line-through;
+  color: #999; 
+  margin-right: 10px;
+}
+
+.new-price {
+  color: #d50000; 
+  font-weight: bold;
+  font-size: 1.2em;
+  animation: blink 1.2s infinite; 
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.3;
+  }
+}
+
 
 .premium {
   padding: 40px;
@@ -443,6 +462,7 @@ footer a {
     grid-template-columns: repeat(2, 300px); 
   }
 }
+
 
 
 

@@ -56,14 +56,12 @@ header nav ul li a:hover {
 }
 
 
-.hero {
-  background: url('https://source.unsplash.com/1600x600/?hotel,resort') center/cover no-repeat;
-  height: 400px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  text-align: center;
+.hero-image {
+  background-image: url("https://rainbowtours.cz/uploads/image/image/339942/wakacje-i-wczasy-w-hotelu-maritim-hotel-paradise-blue-albena-186459.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 600px; /* výšku si můžeš nastavit podle sebe */
+  width: 100%;
 }
 
 .hero-overlay {
@@ -426,3 +424,4 @@ footer a {
     display: flex; 
   }
 }
+

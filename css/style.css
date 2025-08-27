@@ -429,7 +429,9 @@ footer a {
 .nav-link {
   color: #fff !important;
   transition: color 0.3s;
-}  class="nav-link"
+  text-decoration: none;
+}  
+
 
 
 

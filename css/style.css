@@ -61,7 +61,7 @@ header nav ul li a:hover {
   background-size: cover;
   background-position: center;
   height: 600px; /* výšku si můžeš nastavit podle sebe */
-  width: 100%;
+  width: 50%;
 }
 
 .hero-overlay {
@@ -424,4 +424,5 @@ footer a {
     display: flex; 
   }
 }
+
 

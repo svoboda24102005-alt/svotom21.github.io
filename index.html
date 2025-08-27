@@ -89,31 +89,27 @@
   const countdownEl = document.getElementById("countdown");
   const targetDate = new Date("2025-09-19T09:35:00").getTime();
 
-  function pad(num) {
-    return num.toString().padStart(2, "0");
-  }
-
   function updateCountdown() {
-    const now = Date.now();
+    const now = new Date().getTime();
     const distance = targetDate - now;
 
     if (distance <= 0) {
       countdownEl.textContent = "Nabídka vypršela.";
-      clearInterval(timer);
       return;
     }
 
     const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
     const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-    countdownEl.textContent =
-      Nabídka platí ještě: ${days}d ${pad(hours)}h ${pad(minutes)}m ${pad(seconds)}s;
+    countdownEl.textContent = Nabídka platí ještě: ${days}d ${hours}h ${minutes}m ${seconds}s;
   }
 
-  updateCountdown();
-  const timer = setInterval(updateCountdown, 1000);
+  updateCountdown(); // první zavolání hned
+  setInterval(updateCountdown, 1000); // každou sekundu
 </script>
 </section>
 
@@ -225,6 +221,7 @@
 
 </body>
 </html>
+
 
 
 

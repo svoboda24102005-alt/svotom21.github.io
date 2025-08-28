@@ -32,7 +32,16 @@ document.getElementById("roomSelect").addEventListener("change", function() {
 });
 
 
-document.getElementById("nights").addEventListener("input", prepocitatCenu);
+document.getElementById("nights").addEventListener("input", function(e) {
+    let option = document.querySelector('#roomSelect option:checked');
+    let sleva = option.getAttribute("data-sleva");
+    let slevaExistuje = false;
+    if (sleva !== null) {
+        slevaExistuje = true;
+        
+    }
+    prepocitatCenu(slevaExistuje); // zavoláš s vlastním parametrem
+});
 
 // --- pocitani ceny pri zmene noci ---
 
@@ -121,5 +130,6 @@ document.querySelectorAll("#navMenu a").forEach(link => {
   });
 
 });
+
 
 

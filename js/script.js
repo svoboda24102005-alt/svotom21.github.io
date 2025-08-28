@@ -32,11 +32,12 @@ document.getElementById("reservationForm").addEventListener("submit", function(e
 
     let data = new FormData(this);
     data.append("price", cenaPokoj);
-
+    console.log("ababab")
     // preposlani na php
     fetch("reservation.php", {
         method: "POST",
         body: data
+        
     })
     .then(r => r.text())
     .then(msg => {
@@ -47,6 +48,7 @@ document.getElementById("reservationForm").addEventListener("submit", function(e
         document.getElementById("modalMessage").textContent = "Nastala chyba při odeslání.";
         document.getElementById("confirmationModal").style.display = "flex";
     });
+    console.log("dsdsd")
 
     this.reset();
     document.getElementById("totalPrice").textContent = "Celková cena: 0 Kč";
@@ -160,4 +162,5 @@ document.querySelectorAll("#navMenu a").forEach(link => {
   link.addEventListener("click", () => {
     navMenu.classList.remove("show");
   });
+
 });

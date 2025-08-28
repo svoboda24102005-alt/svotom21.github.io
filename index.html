@@ -70,48 +70,10 @@
   <img src="https://www.omniahotel.cz/wp-content/uploads/2025/06/Superior_DVOULUZKO.jpg" alt="Pokoj s výhledem na moře">
   <h3>Pokoj s výhledem na moře</h3>
   <p>Skvělý výhled na moře se 2 lůžky a přistýlkou.</p>
-  <span class="price old-price">2000 Kč / noc</span>
-  <span class="price new-price">1699 Kč / noc</span>    
-
-  <!-- ODPOČET -->
-  <div
-    id="countdown"
-    class="text-center mb-3"
-    style="font-size: 1.2rem; font-weight: bold; color: #d50000"
-  >
-    Nabídka platí ještě: načítám...
-  </div>
-
+  <span class="price">2000 Kč / noc</span>
   <button onclick="vybratPokoj('Pokoj s vyhledem na more',2000)">Rezervovat</button>
 </div>
 
-<script>
-  const countdownEl = document.getElementById("countdown");
-  const targetDate = new Date("2025-09-19T09:35:00").getTime();
-
-  function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = targetDate - now;
-
-    if (distance <= 0) {
-      countdownEl.textContent = "Nabídka vypršela.";
-      return;
-    }
-
-    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const hours = Math.floor(
-      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-    );
-    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-    countdownEl.textContent = Nabídka platí ještě: ${days}d ${hours}h ${minutes}m ${seconds}s;
-  }
-
-  updateCountdown(); // první zavolání hned
-  setInterval(updateCountdown, 1000); // každou sekundu
-</script>
-</section>
 
 <!-- carousel s premium pokojema -->
 <section id="premium" class="premium">
@@ -263,6 +225,7 @@
 
 </body>
 </html>
+
 
 
 

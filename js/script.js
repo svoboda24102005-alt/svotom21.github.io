@@ -20,7 +20,7 @@ function vybratPokoj(nazev, cena) {
 document.getElementById("roomSelect").addEventListener("change", function() {
     let cena = this.options[this.selectedIndex].getAttribute("data-price");
     cenaPokoj = cena ? parseInt(cena) : 0;
-    let option = document.querySelector('option[value="'+nazev+'"]');
+    let option = this.options[this.selectedIndex];
     let sleva = option.getAttribute("data-sleva");
     let slevaExistuje = false;
     if (sleva !== null) {
@@ -121,4 +121,5 @@ document.querySelectorAll("#navMenu a").forEach(link => {
   });
 
 });
+
 

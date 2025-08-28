@@ -255,43 +255,83 @@ header nav ul li a:hover {
 
 .reviews {
   padding: 40px;
-  background: #ecf0f1;
+  background: #f8f9fa;
   text-align: center;
 }
 
-.review {
+.review-card {
+  background: #fff;
+  padding: 20px;
   margin: 20px auto;
   max-width: 600px;
-  font-style: italic;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: left;
+  transition: transform 0.2s ease;
 }
 
+.review-card:hover {
+  transform: translateY(-5px);
+}
 
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.stars {
+  color: #f1c40f;
+  font-size: 18px;
+}
+
+.author {
+  font-weight: bold;
+  color: #555;
+}
+
+.review-card p {
+  font-style: italic;
+  color: #333;
+}
+
+/* FAQ */
 .faq {
   padding: 40px;
+  max-width: 700px;
+  margin: auto;
 }
 
 .faq-item {
   margin-bottom: 15px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .faq-question {
   width: 100%;
   text-align: left;
-  padding: 10px;
+  padding: 15px;
   background: #2980b9;
   color: #fff;
   border: none;
   cursor: pointer;
   font-size: 16px;
-  border-radius: 5px;
+  font-weight: bold;
 }
 
 .faq-answer {
   display: none;
-  padding: 10px;
+  padding: 15px;
   background: #ecf0f1;
-  border-radius: 5px;
-  margin-top: 5px;
+  font-size: 15px;
+  color: #333;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
 }
 
 
@@ -462,6 +502,7 @@ footer a {
     grid-template-columns: repeat(2, 300px); 
   }
 }
+
 
 
 

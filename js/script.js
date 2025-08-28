@@ -5,7 +5,14 @@ let cenaPokoj = 0;
 function vybratPokoj(nazev, cena) {
     document.getElementById("roomSelect").value = nazev;
     cenaPokoj = cena;
-    prepocitatCenu();
+    let option = document.querySelector('option[value="'+nazev+'"]');
+    let sleva = option.getAttribute("data-sleva");
+    let slevaExistuje = false;
+    if (sleva !== null) {
+        slevaExistuje = true;
+    
+    }
+    prepocitatCenu(slevaExistuje);
     document.getElementById("reservation").scrollIntoView({behavior: "smooth"});
 }
 
@@ -13,47 +20,23 @@ function vybratPokoj(nazev, cena) {
 document.getElementById("roomSelect").addEventListener("change", function() {
     let cena = this.options[this.selectedIndex].getAttribute("data-price");
     cenaPokoj = cena ? parseInt(cena) : 0;
-    prepocitatCenu();
+    let option = document.querySelector('option[value="'+nazev+'"]');
+    let sleva = option.getAttribute("data-sleva");
+    let slevaExistuje = false;
+    if (sleva !== null) {
+        slevaExistuje = true;
+    
+    }
+    prepocitatCenu(slevaExistuje);
+    
 });
 
 
 document.getElementById("nights").addEventListener("input", prepocitatCenu);
 
 // --- pocitani ceny pri zmene noci ---
-function prepocitatCenu() {
-    let noci = parseInt(document.getElementById("nights").value) || 1;
-    let soucet = cenaPokoj * noci;
-    document.getElementById("totalPrice").innerText = "Celková cena: " + soucet + " Kč";
-}
 
 
-document.getElementById("reservationForm").addEventListener("submit", function(e) {
-    e.preventDefault();
-
-    let data = new FormData(this);
-    data.append("price", cenaPokoj);
-    console.log("ababab")
-    // preposlani na php
-    fetch("reservation.php", {
-        method: "POST",
-        body: data
-        
-    })
-    .then(r => r.text())
-    .then(msg => {
-        document.getElementById("modalMessage").textContent = msg;
-        document.getElementById("confirmationModal").style.display = "flex";
-    })
-    .catch(() => {
-        document.getElementById("modalMessage").textContent = "Nastala chyba při odeslání.";
-        document.getElementById("confirmationModal").style.display = "flex";
-    });
-    console.log("dsdsd")
-
-    this.reset();
-    document.getElementById("totalPrice").textContent = "Celková cena: 0 Kč";
-    cenaPokoj = 0;
-});
 
 function closeModal() {
     document.getElementById("confirmationModal").style.display = "none";
@@ -94,40 +77,14 @@ if(track){
 }
 
 
-let countdown = document.getElementById("countdown");
-let slevaAktivni = true; 
 
-if(countdown){
-    let konec = new Date().getTime() + 7*24*60*60*1000; // +7 dní
-
-    function odpocti(){
-        let ted = new Date().getTime();
-        let rozdil = konec - ted;
-
-        if(rozdil <= 0){
-            countdown.textContent = "Sleva skončila!";
-            slevaAktivni = false;       
-            prepocitatCenu();           
-            return;
-        }
-
-        let d = Math.floor(rozdil/(1000*60*60*24));
-        let h = Math.floor((rozdil%(1000*60*60*24))/(1000*60*60));
-        let m = Math.floor((rozdil%(1000*60*60))/(1000*60));
-        let s = Math.floor((rozdil%(1000*60))/1000);
-
-        countdown.textContent = "Sleva končí za " + d+"d " + h+"h " + m+"m " + s+"s";
-    }
-
-    odpocti();
-    setInterval(odpocti, 1000);
-}
 
 // vypocet ceny se slevou
-function prepocitatCenu() {
+function prepocitatCenu(slevaAktivni) {
     let noci = parseInt(document.getElementById("nights").value) || 1;
     let soucet = cenaPokoj * noci;
-
+    
+    
     if (slevaAktivni) {
         let sleva = 0.2; // 20% sleva
         let cenaPoSleve = Math.floor(soucet * (1 - sleva));
@@ -164,3 +121,4 @@ document.querySelectorAll("#navMenu a").forEach(link => {
   });
 
 });
+

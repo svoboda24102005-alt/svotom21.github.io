@@ -24,6 +24,15 @@ header {
   top: 0;
   z-index: 1000;
 }
+header .logo a {
+  text-decoration: none;  
+  color: #fff;            
+  font-weight: bold;      
+}
+header .logo a:hover {
+  color: #27ae60;  
+}
+
 
 header .logo {
   display: flex;
@@ -502,6 +511,7 @@ footer a {
     grid-template-columns: repeat(2, 300px); 
   }
 }
+
 
 
 
